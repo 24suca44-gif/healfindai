@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealFind AI - Medical Search & Doctor Recommendations</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <img src="static/images/heallogo.jpg" alt="HealFind AI" class="logo">
+                <h1>HealFind AI</h1>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-btn active" data-mode="medicine">Medicine Search</button>
+                <button class="nav-btn" data-mode="assistant">AI Assistant</button>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Welcome Message -->
+            <div class="welcome-section" id="welcomeSection">
+                <div class="welcome-content">
+                    <h2>Welcome to HealFind AI</h2>
+                    <p>Your intelligent healthcare companion. Search for medicines or get AI-powered doctor recommendations.</p>
+                    <div class="feature-cards">
+                        <div class="feature-card">
+                            <i class="fas fa-pills"></i>
+                            <h3>Medicine Search</h3>
+                            <p>Find nearby medical shops with your required medicines in stock</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-user-md"></i>
+                            <h3>AI Doctor Recommendations</h3>
+                            <p>Upload medical documents and get personalized doctor recommendations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Interface -->
+            <div class="chat-container" id="chatContainer">
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection">
+                <!-- Search results will be displayed here -->
+            </div>
+        </main>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <div class="input-container">
+                <!-- Medicine Search Mode -->
+                <div class="search-mode" id="medicineMode">
+                    <div class="search-inputs">
+                        <div class="input-group">
+                            <input type="text" id="medicineInput" placeholder="Enter medicine name..." class="medicine-input">
+                            <input type="text" id="manufacturerInput" placeholder="Manufacturer (optional)" class="manufacturer-input">
+                        </div>
+                        <button class="search-btn" id="medicineSearchBtn">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                <!-- AI Assistant Mode -->
+                <div class="assistant-mode" id="assistantMode" style="display: none;">
+                    <div class="chat-input-container">
+                        <div class="file-upload-area" id="fileUploadArea">
+                            <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png,.txt,.doc,.docx" multiple>
+                            <div class="upload-placeholder">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Drop medical documents here or click to upload</span>
+                            </div>
+                            <div class="uploaded-files" id="uploadedFiles"></div>
+                        </div>
+                        <div class="message-input-container">
+                            <textarea id="messageInput" placeholder="Describe your symptoms or ask about your medical documents..." class="message-input" rows="1"></textarea>
+                            <button class="send-btn" id="sendBtn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+            <div class="spinner"></div>
+            <p>Processing your request...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="static/js/app.js"></script>
+</body>
+</html>
